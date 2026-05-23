@@ -173,9 +173,7 @@ def prop_msel(*opts) -> dict:
 
 
 def prop_relation(db_id: str) -> dict:
-    return {"relation": {"database_id": db_id,
-                         "type": "single_property",
-                         "single_property": {}}}
+    return {"relation": {"database_id": db_id}}
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -311,11 +309,11 @@ class WorkspaceBuilder:
         print("\n📊  Creating databases …")
         self._make_databases()
 
-        print("\n🔗  Linking databases (relations) …")
-        self._add_relations()
-
         print("\n✍️   Seeding template entries …")
         self._seed_databases()
+
+        print("\n🔗  Linking databases (relations) …")
+        self._add_relations()
 
         print("\n📄  Building page content …")
         self._build_all_page_content()
