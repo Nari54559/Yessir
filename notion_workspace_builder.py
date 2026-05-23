@@ -223,7 +223,7 @@ class WorkspaceBuilder:
     def _create_db(self, parent_id: str, title: str, props: dict,
                    emoji: str = None, inline: bool = True) -> str:
         payload = {
-            "parent": {"page_id": parent_id},
+            "parent": {"type": "page_id", "page_id": parent_id},
             "title": [{"type": "text", "text": {"content": title}}],
             "properties": props,
             "is_inline": inline,
